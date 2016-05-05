@@ -1,0 +1,69 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Green_light"
+        android:src="@drawable/light_off"
+        android:layout_below="@+id/Yellow_light"
+        android:layout_alignLeft="@+id/Yellow_light"
+        android:layout_alignStart="@+id/Yellow_light" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Yellow_light"
+        android:src="@drawable/light_off"
+        android:layout_below="@+id/Red_light"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Red_light"
+        android:src="@drawable/light_off"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/Yellow_light"
+        android:layout_alignStart="@+id/Yellow_light"
+        android:layout_marginTop="41dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="red"
+        android:id="@+id/red_button"
+        android:layout_marginBottom="43dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/Green_light"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="yellow"
+        android:id="@+id/Yellow_button"
+        android:layout_alignBottom="@+id/red_button"
+        android:layout_toLeftOf="@+id/Green_button"
+        android:layout_alignLeft="@+id/Green_light"
+        android:layout_alignStart="@+id/Green_light" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Green"
+        android:id="@+id/Green_button"
+        android:layout_alignTop="@+id/Yellow_button"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/Green_light"
+        android:layout_toEndOf="@+id/Green_light" />
+
+</RelativeLayout>

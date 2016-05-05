@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "C:\\Users\\Rjt\\AndroidStudioProjects\\Traffic Lights\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\red_on.png",
+        "source": "C:\\Users\\Rjt\\AndroidStudioProjects\\Traffic Lights\\app\\src\\main\\res\\drawable-mdpi\\red_on.png"
+    },
+    {
+        "merged": "C:\\Users\\Rjt\\AndroidStudioProjects\\Traffic Lights\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\light_off.png",
+        "source": "C:\\Users\\Rjt\\AndroidStudioProjects\\Traffic Lights\\app\\src\\main\\res\\drawable-mdpi\\light_off.png"
+    },
+    {
+        "merged": "C:\\Users\\Rjt\\AndroidStudioProjects\\Traffic Lights\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\yellow_on.png",
+        "source": "C:\\Users\\Rjt\\AndroidStudioProjects\\Traffic Lights\\app\\src\\main\\res\\drawable-mdpi\\yellow_on.png"
+    },
+    {
+        "merged": "C:\\Users\\Rjt\\AndroidStudioProjects\\Traffic Lights\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\green_on.png",
+        "source": "C:\\Users\\Rjt\\AndroidStudioProjects\\Traffic Lights\\app\\src\\main\\res\\drawable-mdpi\\green_on.png"
+    },
+    {
+        "merged": "C:\\Users\\Rjt\\AndroidStudioProjects\\Traffic Lights\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\Rjt\\AndroidStudioProjects\\Traffic Lights\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    }
+]
