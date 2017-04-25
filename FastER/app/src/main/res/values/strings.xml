@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FastER</string>
+    <string name="facebook_app_id">420001731699918</string>
+    <string name="firebase_error_login">Firebase Login Error</string>
+    <string name="title_activity_facebook_login">FacebookLoginActivity</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
+       AIzaSyBdDjaZrQmWsNAUUKyZZ-CEa9Haknc8hr4
+    </string>
+</resources>

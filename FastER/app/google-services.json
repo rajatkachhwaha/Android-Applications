@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "136779000779",
+    "firebase_url": "https://faster-5d3f8.firebaseio.com",
+    "project_id": "faster-5d3f8",
+    "storage_bucket": "faster-5d3f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136779000779:android:e4b81d5b374bd831",
+        "android_client_info": {
+          "package_name": "com.example.rjt.faster"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "136779000779-a2bl2djq6i55n1as0rai5r99o27ddcs2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rjt.faster",
+            "certificate_hash": "8fd8d3bf46730e30b188874689b99676c47a5afc"
+          }
+        },
+        {
+          "client_id": "136779000779-u0mp32t4lfl1h2j89ekkvg11bg5hmhc5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkgebvRkydLe9WthIQLVh8em0aIMpnQag"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "136779000779-u0mp32t4lfl1h2j89ekkvg11bg5hmhc5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
