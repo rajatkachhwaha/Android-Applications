@@ -48,7 +48,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Button saveButton;
     Double latitude, longitude;
     int index;
-    Marker M1 = new Marker();
     FirebaseDatabase firebaseDatabase, fdb;
     DatabaseReference dbref, databaseReference;
     ArrayList<Marker> markerArrayList = new ArrayList<Marker>();
@@ -73,13 +72,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         saveButton = (Button) findViewById(R.id.button2);
         fdb = FirebaseDatabase.getInstance();
         databaseReference = fdb.getReference("clicks");
-        // Add a marker in Sydney and move the camera
-        LatLng cali = new LatLng(38, -121);
-
-        //LatLng nevada = new LatLng(38.8026, -116.4194);
-        mMap.addMarker(new MarkerOptions().position(cali).title("Marker in California"));
-        //mMap.addMarker(new MarkerOptions().position(nevada).title("Marker in Nevada"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(cali));
+        LatLng cali = new LatLng(38, -121); //
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(cali)); //Move camera over Callifornia
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(com.google.android.gms.maps.model.Marker marker) {
@@ -102,14 +96,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new callFunaction().execute("");
+                new updateClicks().execute("");
             }
         });
 
 
     }
-
-
     public void putmarkers(GoogleMap map) {
 
         final GoogleMap imap = map;
@@ -146,42 +138,33 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         });
 
     }
-
     public int getindexid(Double latitude, Double longitude) {
 
         String lat = latitude.toString();
+        String logi= longitude.toString();
         Log.w("latitude in getindexid", lat);
-        String logi = longitude.toString();
-
         for (int i = 0; i < markerArrayList.size(); i++) {
             Log.w("for looping for  : " +i, markerArrayList.get(i).getLatitude());
-            if (markerArrayList.get(i).getLatitude().equals(lat) ) {
+            if (markerArrayList.get(i).getLatitude().equals(lat) && markerArrayList.get(i).getLongitude().equals(logi) ) {
                 return i;
             }
-
         }
         return -1;
-
-
     }
 
-    private class callFunaction extends AsyncTask<String, Void, String> {
+    private class updateClicks extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... params) {
-
             //Toast.makeText(getApplicationContext(), "we r at" + markerArrayList.get(index).getName(), Toast.LENGTH_LONG).show();
             fdb=FirebaseDatabase.getInstance();
             databaseReference= fdb.getReference("clicks").child(markerArrayList.get(index).getName());
-
             databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     String s= dataSnapshot.child("clickCounts").getValue().toString();
                     Integer count= Integer.valueOf(s);
-                    Log.w("hululala", count.toString());
-                    int c= count+1;
-
-                    databaseReference.child("clickCounts").setValue(c);
+                    int cnt= count+1;
+                    databaseReference.child("clickCounts").setValue(cnt);
                 }
 
                 @Override
@@ -193,33 +176,27 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             return null;
         }
 
-        private ProgressDialog pdia;
+        private ProgressDialog progressDialog;
 
         @Override
         protected void onPreExecute(){
             super.onPreExecute();
-            pdia = new ProgressDialog(MapsActivity.this);
-            pdia.setMessage("Loading...");
-            pdia.show();
+            progressDialog = new ProgressDialog(MapsActivity.this);
+            progressDialog.setMessage("Loading...");
+            progressDialog.show();
         }
 
         @Override
         protected void onPostExecute(String result){
             super.onPostExecute(result);
-            pdia.dismiss();
+            progressDialog.dismiss();
             Toast.makeText(getApplicationContext(), "Thank you for using Fast ER" , Toast.LENGTH_LONG).show();
             Intent intent= new Intent(MapsActivity.this, MapsActivity.class);
             startActivity(intent);
             finish();
         }
-
-
-
         @Override
         protected void onProgressUpdate(Void... values) {
-
-
-
         }
     }
 }

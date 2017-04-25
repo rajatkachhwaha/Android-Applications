@@ -43,9 +43,7 @@ public class FacebookLoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(this.getApplicationContext());
         setContentView(R.layout.activity_facebook_login);
-
         callbackManager = CallbackManager.Factory.create();
-
         loginButton = (LoginButton) findViewById(R.id.login_button);
         loginButton.setReadPermissions(Arrays.asList("email"));
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
@@ -53,8 +51,6 @@ public class FacebookLoginActivity extends AppCompatActivity {
             public void onSuccess(LoginResult loginResult) {
                 Log.d("fb:onsuccess: ", loginResult.toString());
                 handleFacebookAccessToken(loginResult.getAccessToken());
-
-
             }
 
             @Override
@@ -120,14 +116,4 @@ public class FacebookLoginActivity extends AppCompatActivity {
         super.onStop();
         firebaseAuth.removeAuthStateListener(firebaseAuthListner);
     }
-
-
-
-
-
-
-
-
-
-
 }
